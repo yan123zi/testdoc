@@ -404,3 +404,103 @@
 **获取歌曲的相关热门歌单**
 
 ![获取歌曲的相关热门歌单](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/songRelatePlayList.png)
+
+### 通过不同筛选规则获取mv列表
+
+接口说明：调用该接口，使用各种条件筛选出mv列表
+
+参数列表：
+
+- 可选参数
+
+`versionId`：mv的版本id，默认是7（全部）
+
+<details>
+  <summary>Version</summary>
+
+    "version": [
+      {
+        "id": 7,
+        "name": "全部"
+      },
+      {
+        "id": 8,
+        "name": "MV"
+      },
+      {
+        "id": 9,
+        "name": "现场"
+      },
+      {
+        "id": 10,
+        "name": "翻唱"
+      },
+      {
+        "id": 11,
+        "name": "舞蹈"
+      },
+      {
+        "id": 12,
+        "name": "影视"
+      },
+      {
+        "id": 13,
+        "name": "综艺"
+      },
+      {
+        "id": 14,
+        "name": "儿歌"
+      }
+    ]
+</details>
+
+`areaId`：mv的区域id，默认是15（全部）
+
+<details>
+  <summary>Area</summary>
+
+    "area": [
+      {
+        "id": 15,
+        "name": "全部"
+      },
+      {
+        "id": 16,
+        "name": "内地"
+      },
+      {
+        "id": 17,
+        "name": "港台"
+      },
+      {
+        "id": 18,
+        "name": "欧美"
+      },
+      {
+        "id": 19,
+        "name": "韩国"
+      },
+      {
+        "id": 20,
+        "name": "日本"
+      }
+    ]
+</details>
+
+`offset`：偏移量，默认是0
+
+`limit`：每次查出的mv的数量，默认是20
+
+接口地址：`/getMvList`
+
+调用例子：`/getMvList`
+
+实例截图：
+
+**通过不同筛选规则获取mv列表**
+
+![通过不同筛选规则获取mv列表](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/getMvList.png)
+
+**通过不同筛选规则获取mv列表-带参数**
+
+![通过不同筛选规则获取mv列表-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/getMvListByParams.png)
