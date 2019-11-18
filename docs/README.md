@@ -261,15 +261,15 @@
 
 - 必选参数
 
-`categoryId`：类别`id`
+`categoryId`：类别`id`，默认是10000000
 
 - 可选参数
 
-`limit`：每次取出的歌单数量
+`limit`：每次取出的歌单数量，默认是19
 
-`offset`：偏移量
+`offset`：偏移量，默认是0
 
-`sortId`：排序id：2:最新 5:推荐
+`sortId`：排序id：2:最新 5:推荐，默认是5
 
 接口地址：`/playList/:categoryId`
 
@@ -285,3 +285,102 @@
 
 ![通过分类获取歌单列表-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/playListByCategoryWithParams.png)
 
+### 获取歌单详情
+
+接口说明：调用此接口，可以获得歌单的详情
+
+参数列表：
+
+- 必选参数
+
+`id`：歌单的id
+
+接口地址：`/playListDetails/:id`
+
+调用例子：`/playListDetails/6375131889`
+
+实例截图：
+
+**获取歌单详情**
+
+![获取歌单详情](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/playListDetails.png)
+
+### 获取歌曲的链接
+
+接口说明：调用该接口，可以获得歌曲的vkey，歌曲外链和一些其它参数
+
+参数列表：
+
+- 必选参数
+
+`id`：歌曲的id
+
+接口地址：`/songUrl/:id`
+
+调用例子：`/songUrl/001Xn6C50lvtLc`
+
+实例截图：
+
+**获取歌曲的链接**
+
+![获取歌曲的链接](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/songUrl.png)
+
+### 获取歌曲的歌词
+
+接口说明：调用该接口，可以获得歌曲的歌词
+
+参数列表：
+
+- 必选参数
+
+`id`：歌曲的id
+
+接口地址：`/songLyric/:id`
+
+调用例子：`/songLyric/231745979`
+
+实例截图：
+
+**获取歌曲的链接**
+
+![获取歌曲的链接](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/songLyric.png)
+
+### 获取歌曲的详情
+
+接口说明：调用该接口，可以获得歌曲的详情
+
+参数列表：
+
+- 必选参数
+
+`id`：歌曲的id
+
+接口地址：`/songDetails/:id`
+
+调用例子：`/songDetails/0035KWhu1mizlY`
+
+实例截图：
+
+**获取歌曲的链接**
+
+![获取歌曲的链接](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/playListDetails.png)
+
+### 获取歌曲的相关mv
+
+接口说明：调用该接口，可以获得歌曲的相关的mv
+
+参数列表：
+
+- 必选参数
+
+`id`：歌曲的id
+
+接口地址：`/songRelateMv/:id`
+
+调用例子：`/songRelateMv/0035KWhu1mizlY`
+
+实例截图：
+
+**获取歌曲的链接**
+
+![获取歌曲的链接](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/songMv.png)
