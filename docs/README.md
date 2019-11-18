@@ -341,9 +341,9 @@
 
 实例截图：
 
-**获取歌曲的链接**
+**获取歌曲的歌词**
 
-![获取歌曲的链接](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/songLyric.png)
+![获取歌曲的歌词](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/songLyric.png)
 
 ### 获取歌曲的详情
 
@@ -361,9 +361,9 @@
 
 实例截图：
 
-**获取歌曲的链接**
+**获取歌曲的详情**
 
-![获取歌曲的链接](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/playListDetails.png)
+![获取歌曲的详情](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/playListDetails.png)
 
 ### 获取歌曲的相关mv
 
@@ -377,10 +377,30 @@
 
 接口地址：`/songRelateMv/:id`
 
-调用例子：`/songRelateMv/0035KWhu1mizlY`
+调用例子：`/songRelateMv/0020VnHM0U9uNh`
 
 实例截图：
 
-**获取歌曲的链接**
+**获取歌曲的相关mv**
 
-![获取歌曲的链接](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/songMv.png)
+![获取歌曲的相关mv](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/songMv.png)
+
+### 获取歌曲的相关热门歌单
+
+接口说明：调用该接口，可以获得歌曲的相关的热门歌单
+
+参数列表：
+
+- 必选参数
+
+`id`：歌曲的id
+
+接口地址：`/songRelatePlayList/:id`
+
+调用例子：`/songRelatePlayList/233060208`
+
+实例截图：
+
+**获取歌曲的相关热门歌单**
+
+![获取歌曲的相关热门歌单](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/songRelatePlayList.png)
