@@ -504,3 +504,164 @@
 **通过不同筛选规则获取mv列表-带参数**
 
 ![通过不同筛选规则获取mv列表-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/getMvListByParams.png)
+
+### 通过mv的标签种类获取mv列表
+
+接口说明：通过调用此接口，可以获取不同标签种类的mv的列表
+
+参数列表：
+
+- 可选参数
+
+`tag`：mv标签种类，默认是all
+
+<details>
+    <summary>tag</summary>
+    
+    "tag":[
+        {
+            tag: "all",
+            name: "精选"
+        },
+        {
+            tag: "neidi",
+            name: "内地"
+        },
+        {
+            tag: "korea",
+            naem: "韩国"
+        },
+        {
+            tag: "gangtai",
+            name: "港台"
+        },
+        {
+            tag: "oumei",
+            name: "欧美"
+        },
+        {
+            tag: "janpan",
+            name: "日本"
+        }
+    ]
+</details>
+
+接口地址：`/getMvByTag/:tag`
+
+调用例子：`/getMvByTag/gangtai`
+
+实例截图：
+
+**通过mv的标签种类获取mv列表**
+
+![通过mv的标签种类获取mv列表](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/getMvListByTag.png)
+
+### 获取mv详情
+
+接口说明：通过调用该接口，可以获取mv的详情
+
+参数列表：
+
+- 必选参数：
+
+`id`：mv的id
+
+接口地址：`/mvDetails/:id`
+
+调用例子：`/mvDetails/v0032zk67ui`
+
+实例截图：
+
+**获取mv详情**
+
+![获取mv详情](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/mvDetails.png)
+
+### 获取mv播放链接
+
+接口说明：通过调用该接口，可以获取mv的播放链接
+
+参数列表：
+
+- 必选参数：
+
+`id`：mv的id
+
+接口地址：`/mvUrl/:id`
+
+调用例子：`/mvUrl/v0032zk67ui`
+
+实例截图：
+
+**获取mv详情**
+
+![获取mv播放链接](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/mvUrl.png)
+
+### 获取主页上的推荐
+
+接口说明：通过调用该接口，可以获取主页上所有的推荐内容
+
+接口地址：`/getRecommend`
+
+调用例子：`/getRecommend`
+
+实例截图：
+
+**获取主页上的推荐**
+
+![获取主页上的推荐](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/Recommend.png)
+
+### 获取各种分类的榜单列表
+
+接口说明：通过调用该接口，可以qq音乐各种排行榜的榜单列表
+
+参数列表：
+
+- 必选参数：
+
+`id`：榜单的id
+
+<details>
+    <summary>topListId</summary>
+    
+    "id":[
+        "巅峰榜": [
+            {
+                id: 4,
+                name: "流行指数榜"
+            },
+            {
+                id: 26,
+                name: "热歌榜"
+            },
+            {
+                id: 27,
+                name: "新歌榜"
+            },
+            {
+                id: 62,
+                name: "飙升榜"
+            },
+            {
+                id: 67,
+                name: "听歌识曲榜"
+            },
+            {
+                id: 4,
+                name: "流行指数榜"
+            }，
+            {
+                name: "mv榜（通过调用`/mvRank`获取）"
+            }
+        ],
+    ]
+</details>
+
+接口地址：`/mvUrl/:id`
+
+调用例子：`/mvUrl/v0032zk67ui`
+
+实例截图：
+
+**获取mv详情**
+
+![获取mv播放链接](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/mvUrl.png)
