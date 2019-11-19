@@ -653,15 +653,244 @@
                 name: "mv榜（通过调用`/mvRank`获取）"
             }
         ],
+        "地区榜":[
+            {
+                id: 5,
+                name: "内地榜"
+            },
+            {
+                id: 59,
+                name: "香港地区"
+            },
+            {
+                id: 61,
+                name: "台湾地区"
+            },
+            {
+                id: 3,
+                name: "欧美榜"
+            },
+            {
+                id: 16,
+                name: "韩国榜"
+            },
+            {
+                id: 17,
+                name: "日本榜"
+            },
+        ],
+        "特色榜":[
+            {
+                id: 60,
+                name: "抖音排行榜"
+            },
+            {
+                id: 28,
+                name: "网络歌曲榜"
+            },
+            {
+                id: 57,
+                name: "电音榜"
+            },
+            {
+                id: 66,
+                name: "ACG新歌榜"
+            },
+            {
+                id: 65,
+                name: "国风热歌榜"
+            },
+            {
+                id: 64,
+                name: "综艺新歌榜"
+            },
+            {
+                id: 29,
+                name: "影视金曲榜"
+            },
+            {
+                id: 52,
+                name: "腾讯音乐人原创榜"
+            },
+            {
+                id: 36,
+                name: "k歌金曲榜"
+            },
+            {
+                id: 58,
+                name: "说唱榜"
+            },
+        ]
     ]
 </details>
 
-接口地址：`/mvUrl/:id`
+- 可选参数：
 
-调用例子：`/mvUrl/v0032zk67ui`
+`offset`：分页的偏移量，默认值是0
+
+`limit`：每页显示的数量，默认值是20
+
+接口地址：`/topList/:id`
+
+调用例子：`/topList/26`
 
 实例截图：
 
-**获取mv详情**
+**获取各种分类的榜单列表**
 
-![获取mv播放链接](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/mvUrl.png)
+![获取各种分类的榜单列表](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/topList.png)
+
+**获取各种分类的榜单列表-带参数**
+
+![获取各种分类的榜单列表-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/topListWithParam.png)
+
+### 获取新专辑列表
+
+接口说明：调用该接口，可以获取最新专辑列表（按分类）
+
+参数列表：
+
+- 必选参数：
+
+`id`：专辑列表种类id
+
+<details>
+    <summary>id</summary>
+    
+    "id":[
+        {
+            id: 1,
+            name: "内地"
+        },
+        {
+            id: 2,
+            name: "港台"
+        },
+        {
+            id: 3,
+            name: "欧美"
+        },
+        {
+            id: 4,
+            name: "韩国"
+        },
+        {
+            id: 5,
+            name: "日本"
+        },
+        {
+            id: 6,
+            name: "其它"
+        }
+    ]
+</details>
+
+- 可选参数：
+
+`limit`：每次查询出的数量，默认值是20
+
+`offset`：分页的偏移量，默认值是0
+
+接口地址：`/albumList/:id`
+
+调用例子：`/albumList/1`
+
+**获取新专辑列表**
+
+![获取新专辑列表](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/albumList.png)
+
+**获取新专辑列表-带参数**
+
+![获取新专辑列表-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/albumListWithParam.png)
+
+### 获取专辑详情
+
+接口说明：调用此接口，可以获得专辑的详细信息
+
+参数列表：
+
+- 必选参数：
+
+`id`：专辑的id
+
+接口地址：`/albumDetails`
+
+调用例子：`/albumDetails/003mvZ8M1fCuPp`
+
+**获取专辑详情**
+
+![获取专辑详情](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/albumDetails.png)
+
+### 获取专辑内歌曲列表
+
+接口说明：调用此接口，可以获得专辑的歌曲列表
+
+参数列表：
+
+- 必选参数：
+
+`id`：专辑的id
+
+接口地址：`/albumSongList`
+
+调用例子：`/albumSongList/003mvZ8M1fCuPp`
+
+**获取专辑内歌曲列表**
+
+![获取专辑内歌曲列表](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/albumSongList.png)
+
+### 获取热门搜索的关键字
+
+接口说明：调用此接口，可以获得当前热门的搜索关键字
+
+接口地址：`/hotKeySearch`
+
+调用例子：`/hotKeySearch`
+
+**获取热门搜索的关键字**
+
+![获取热门搜索的关键字](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/hotKeySearch.png)
+
+### 获取异步的搜索提示
+
+接口说明：调用此接口，可以获得搜索输入框中的异步提示
+
+参数列表：
+
+- 必选参数：
+
+`key`：异步搜索的关键字
+
+接口地址：`/smallSow/:key`
+
+调用例子：`/smallSow/芒种`
+
+**获取异步的搜索提示**
+
+![获取异步的搜索提示](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/smallShow.png)
+
+### 搜索关键字
+
+接口说明：调用此接口，可以获得搜索输入框中的异步提示
+
+参数列表：
+
+- 必选参数：
+
+`key`：搜索的关键字
+
+- 可选参数：
+
+`limit`：
+
+`page`：
+
+`type`：
+
+接口地址：`/searchKey/:id`
+
+调用例子：`/searchKey/芒种`
+
+**搜索关键字**
+
+![搜索关键字](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/smallShow.png)
