@@ -246,7 +246,6 @@
     6.13
       "categoryId": 16,
       "categoryName": "校园",
-  </summary>
 </details>
 
 示例截图:
@@ -881,11 +880,34 @@
 
 - 可选参数：
 
-`limit`：
+`limit`：每页显示的数量，默认值是10
 
-`page`：
+`page`：页码，默认值是1
 
-`type`：
+`type`：搜索的类型，默认是song
+
+<details>
+    <summary>type</summary>
+    
+    "type":[
+        {
+            type: "song",
+            name: "歌曲"
+        },
+        {
+            type: "album",
+            name: "专辑"
+        },
+        {
+            type: "mv",
+            name: "mv"
+        },
+        {
+            type: "lyric",
+            name: "歌词"
+        },
+    ]
+</details>
 
 接口地址：`/searchKey/:id`
 
@@ -894,3 +916,368 @@
 **搜索关键字**
 
 ![搜索关键字](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/searchKey.png)
+
+**搜索关键字-带参数**
+
+![搜索关键字-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/searchKeyWithParam.png)
+
+### 获取歌手列表
+
+接口说明：调用此接口，可以获得歌手的列表
+
+参数列表：
+
+- 可选参数：
+
+`limit`：每页显示的数量，默认值是10
+
+`page`：页码，默认值是1
+
+`area`：歌手所在的地区，默认是-100（全部）
+
+<details>
+    <summary>area</summary>
+    
+    "area":[
+        {
+            area: -100,
+            name: "全部"
+        },
+        {
+            area: 200,
+            name: "内地"
+        },
+        {
+            area: 2,
+            name: "港台"
+        },
+        {
+            area: 3,
+            name: "韩国"
+        },
+        {
+            area: 4,
+            name: "日本"
+        },
+        {
+            area: 5,
+            name: "欧美"
+        },
+        {
+            area: 6,
+            name: "其它"
+        }
+    ]
+</details>
+
+`sex`：歌手的性别，默认是-100（全部）
+
+<details>
+    <summary>sex</summary>
+    
+    "sex":[
+        {
+            sex: -100,
+            name: "全部"
+        },
+        {
+            sex: 0,
+            name: "男"
+        },
+        {
+            sex: 1,
+            name: "女"
+        },
+        {
+            sex: 2,
+            name: "组合"
+        }
+    ]
+</details>
+
+`genre`：歌手类别，默认是-100（全部）
+
+<details>
+    <summary>genre</summary>
+    
+    "genre":[
+        {
+            genre: -100,
+            name: "全部"
+        },
+        {
+            genre: 1,
+            name: "流行"
+        },
+        {
+            genre: 2,
+            name: "摇滚"
+        },
+        {
+            genre: 3,
+            name: "民谣"
+        },
+        {
+            genre: 4,
+            name: "电子"
+        },
+        {
+            genre: 5,
+            name: "爵士"
+        },
+        {
+            genre: 6,
+            name: "嘻哈"
+        },
+        {
+            genre: 8,
+            name: "R&B"
+        }，
+        {
+            genre: 9,
+            name: "轻音乐"
+        }，
+        {
+            genre: 10,
+            name: "民歌"
+        }，
+        {
+            genre: 14,
+            name: "古典"
+        },
+        {
+            genre: 20,
+            name: "蓝调"
+        },
+        {
+            genre: 25,
+            name: "乡村"
+        }
+    ]
+</details>
+
+`index`：歌手按名称查找，默认是-100（全部），值由A-Z从1到26，最后一个值#为27
+
+接口地址：`/singerList`
+
+调用例子：`/singerList`
+
+**获取歌手列表**
+
+![获取歌手列表](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/searchKey.png)
+
+**获取歌手列表-带参数**
+
+![获取歌手列表-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerListWithParam.png)
+
+### 获取歌手的详细信息
+
+接口说明：调用此接口，可以获得歌手的详细信息
+
+参数列表：
+
+- 必选参数：
+
+`id`：歌手的id
+
+接口地址：`/singerDetails/:id`
+
+调用例子：`/singerDetails/002azErJ0UcDN6`
+
+**获取歌手的详细信息**
+
+![获取歌手的详细信息](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerDetails.png)
+
+### 获取歌手的歌曲列表
+
+接口说明：调用此接口，可以获得歌手的歌曲列表
+
+参数列表：
+
+- 必选参数：
+
+`id`：歌手的id
+
+- 可选参数：
+
+`limit`：每页显示的歌曲数量，默认值是10
+
+`offset`：分页的偏移量，默认值是0
+
+接口地址：`/singerSongList/:id`
+
+调用例子：`/singerSongList/002azErJ0UcDN6`
+
+**获取歌手的歌曲列表**
+
+![获取歌手的歌曲列表](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerSongList.png)
+
+**获取歌手的歌曲列表-带参数**
+
+![获取歌手的歌曲列表-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerSongListWithParam.png)
+
+### 获取歌手的所有专辑
+
+接口说明：调用此接口，可以获得歌手的所有专辑
+
+参数列表：
+
+- 必选参数：
+
+`id`：歌手的id
+
+- 可选参数：
+
+`limit`：每页显示的歌曲数量，默认值是10
+
+`offset`：分页的偏移量，默认值是0
+
+接口地址：`/singerAlbums/:id`
+
+调用例子：`/singerAlbums/002azErJ0UcDN6`
+
+**获取歌手的所有专辑**
+
+![获取歌手的所有专辑](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerAlbums.png)
+
+**获取歌手的所有专辑-带参数**
+
+![获取歌手的所有专辑-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerAlbumsWithParam.png)
+
+### 获取歌手的所有mv
+
+接口说明：调用此接口，可以获得歌手的所有mv
+
+参数列表：
+
+- 必选参数：
+
+`id`：歌手的id
+
+- 可选参数：
+
+`limit`：每页显示的歌曲数量，默认值是5
+
+`offset`：分页的偏移量，默认值是0
+
+接口地址：`/singerMvs/:id`
+
+调用例子：`/singerMvs/002azErJ0UcDN6`
+
+**获取歌手的所有mv**
+
+![获取歌手的所有mv](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerMvs.png)
+
+**获取歌手的所有mv-带参数**
+
+![获取歌手的所有mv-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerMVsWithParam.png)
+
+### 获取歌手的粉丝上传内容
+
+接口说明：调用此接口，可以获得歌手的粉丝上传的内容
+
+参数列表：
+
+- 必选参数：
+
+`id`：歌手的id
+
+- 可选参数：
+
+`limit`：每页显示的歌曲数量，默认值是5
+
+`offset`：分页的偏移量，默认值是0
+
+接口地址：`/singerFunsUp/:id`
+
+调用例子：`/singerFunsUp/002azErJ0UcDN6`
+
+**获取歌手的粉丝上传内容**
+
+![获取歌手的粉丝上传内容](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerFunsUp.png)
+
+**获取歌手的粉丝上传内容-带参数**
+
+![获取歌手的粉丝上传内容-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/singerFunsUpWithParam.png)
+
+### 获取歌手的相似歌手
+
+接口说明：调用此接口，可以获得歌手的相似歌手
+
+参数列表：
+
+- 必选参数：
+
+`id`：歌手的id
+
+- 可选参数：
+
+`limit`：每页显示的歌曲数量，默认值是5
+
+`offset`：分页的偏移量，默认值是0
+
+接口地址：`/similarSingers/:id`
+
+调用例子：`/similarSingers/002azErJ0UcDN6`
+
+**获取歌手的相似歌手**
+
+![获取歌手的相似歌手](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/similarSingers.png)
+
+**获取歌手的相似歌手-带参数**
+
+![获取歌手的相似歌手-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/similarSingersWithParam.png)
+
+### 获取歌单，专辑，歌曲的评论
+
+接口说明：调用此接口，可以获得歌单，专辑，歌曲的评论
+{2,3}歌单的评论{2,4}排行榜的评论{2,2}专辑的评论，{2,5}mv的评论,{2,1}歌曲的评论
+参数列表：
+
+- 必选参数：
+
+`id`：歌单，专辑，歌曲或mv的id
+
+- 可选参数：
+
+`limit`：每页显示的歌曲数量，默认值是25
+
+`offset`：分页的偏移量，默认值是0
+
+`reqtype`：默认值是2
+
+`biztype`：默认值是3
+
+<details>
+    <summary>{reqtype,biztype}</summary>
+    
+    "{reqtype,biztype}":[
+        {
+            {2,1}："歌曲的评论"
+        },
+        {
+            {2,2}："专辑的评论"
+        },
+        {
+            {2,3}："歌单的评论"
+        },
+        {
+            {2,4}："排行榜的评论"
+        },
+        {
+            {2,5}："mv的评论"
+        }
+    ]
+</details>
+
+接口地址：`/Comments/:id`
+
+调用例子：`/Comments/6999230203`
+
+**获取歌单，专辑，歌曲的评论**
+
+![获取歌单，专辑，歌曲的评论](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/similarSingers.png)
+
+**获取歌单，专辑，歌曲的评论-带参数**
+
+![获取歌单，专辑，歌曲的评论-带参数](https://raw.githubusercontent.com/yan123zi/testdoc/master/screenshot/commontsWithParam.png)
